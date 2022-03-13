@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  application:
+    name: air-tickets-order-service
+  cloud:
+    config:
+      discovery:
+        enabled: false
+      enabled: true
+      fail-fast: true
+      uri: ${CONFIG_SERVER_URL}
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: air_tickets_order
+    username: root
+    password: rootroot
+    url: jdbc:mysql://localhost:3306/air_tickets_order
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      linger-ms: 5000
+      max-request-size: 16384
+      batch-size: 16384
+      buffer-memory: 33554432
+    template:
+      default-topic: air-tickets-order
+
+feign:
+  price-seat-service:
+    name:price-seat-service: price-seat-service
+
+
+server:
+  port: 8090
