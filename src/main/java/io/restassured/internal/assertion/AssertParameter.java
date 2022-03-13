@@ -1,6 +1,6 @@
 package io.restassured.internal.assertion;
 
-//@SuppressWarnings()
+
 public class AssertParameter {
     public static <T> T notNull(T object, Class aClass) {
         return notNull(object, aClass.getSimpleName());

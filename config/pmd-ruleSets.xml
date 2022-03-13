@@ -48,4 +48,10 @@
 
     <rule ref="rulesets/java/braces.xml">
     </rule>
+
+    <rule ref="rulesets/java/strictexception.xml/SignatureDeclareThrowsException" >
+        <properties>
+            <property name="violationSuppressXPath" value="'io.restassured.internal'.*" />
+        </properties>
+    </rule>
 </ruleset>
